@@ -1,11 +1,50 @@
 import random 
 
-listofshows=["Finian’s Rainbow","Mister Roberts","Death of a Salesman","South Pacific"
-      "Guys and Dolls", "The King and I", "Wonderful Town","The Teahouse of the August Moon",
+listofshows=["Mister Roberts","Death of a Salesman","South Pacific","Guys and Dolls", "The King and I", "Wonderful Town",
       "The Pajama Game", "My Fair Lady","West Side Story", "The Music Man","The Sound of Music",
-      "Bye Bye Birdie", "A Man for All Seasons" "Hello, Dolly", "Fiddler on the Roof", "Cabaret", "Hallelujah Baby", "Applause", "Company", "Two Gentlemen of Verona",
-      "A Little Night Music", "Over Here","The Wiz", "A Chorus Line", "Annie","Sweeney Todd", "Evita", "Dreamgirls",
+      "Bye Bye Birdie", "A Man for All Seasons", "Hello, Dolly", "Fiddler on the Roof", "Cabaret", "Hallelujah Baby", "Applause", "Company", 
+       "Over Here","The Wiz", "A Chorus Line", "Annie","Sweeney Todd", "Evita", "Dreamgirls",
       "Cats", "Biloxi Blues", "Song and Dance", "Me and My Girl", "Les Miserables",
-      "The Phantom of the Opera", "The Heidi Chronicles", "City of Angels", "Miss Saigon", "Crazy for You",
-      "Angles in America","Passion", "Sunset Boulevard", "Rent", "Titanic", "The Lion King", "Fosse", "Kiss Me Kate"]
+      "The Phantom of the Opera", "Miss Saigon", "Crazy for You","Angles in America","Passion", "Sunset Boulevard", "Rent", "Titanic", "The Lion King", "Fosse", "Kiss Me Kate"]
 
+
+#--------------------------Game Starts Here -------------------------------
+
+name= random.sample(listofshows,1)
+bars=[]
+for x in name:
+    for y in x:
+        if y == " ":
+            bars.append(" ")
+        else:
+            bars.append("_")
+name= " ".join(name)
+name= name.lower()
+wrongletters=[]
+correctletters=[]
+chances=14
+Win= False 
+
+
+    
+while Win== False and chances > 0:
+    print(bars)
+    print( chances)
+    print(wrongletters)
+    print(correctletters)
+    guess= input ( "Guess a letter:").lower()
+    if len(guess) == 1 and guess not in name:
+        wrongletters.append(guess)
+        chances-= 1
+    if len(guess) == 1 and guess in name:
+        for i in range(0,len(name)):
+            letter= name[i]
+            if guess==letter:
+                bars[i]= guess
+        correctletters.append(guess)
+        chances-= 1
+if "_" not in bars:
+    Win= True
+    print("The answer is: "+ name + "... You win!")
+if chances == 0:
+    print("The answer is: "+ name+ "... You lose!")
