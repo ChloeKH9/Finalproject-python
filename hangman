@@ -43,8 +43,8 @@ while Win== False and chances > 0:
                 bars[i]= guess
         correctletters.append(guess)
         chances-= 1
-if "_" not in bars:
-    Win= True
-    print("The answer is: "+ name + "... You win!")
+        if "_" not in bars:
+            Win= True
+            print("The answer is: "+ name + "... You win!")
 if chances == 0:
     print("The answer is: "+ name+ "... You lose!")
