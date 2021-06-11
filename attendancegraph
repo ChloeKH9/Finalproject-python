@@ -1,0 +1,38 @@
+import matplotlib.pyplot as plt
+
+data= open('attendance.csv.txt')
+text=data.read()
+print(text)
+
+
+new= text.split("\n")
+
+
+data = []
+i=1
+new= text.split("\n")
+while i<len(new)-1:
+    y=new[i].split(",")
+    data.append(y)
+    i+=1
+
+Years=[]
+Attendance=[]
+for x in data:
+    for y in x:
+        Years.append(x[0])
+        Attendance.append(x[1])
+
+Years= list(map(int,Years))
+Attendance= list(map(int,Attendance))
+
+
+
+
+#-------------------------------------Graphing Data-------------------------------------
+plt.bar(Years,Attendance)
+plt.title("Broadway Attendance")
+plt.xlabel("Years")
+plt.ylabel("Attendance(in millions)")
+plt.show()
+    
