@@ -27,8 +27,6 @@ Years= list(map(int,Years))
 Attendance= list(map(int,Attendance))
 
 
-
-
 #-------------------------------------Graphing Data-------------------------------------
 plt.bar(Years,Attendance)
 plt.title("Broadway Attendance")
