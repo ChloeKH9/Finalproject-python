@@ -21,3 +21,4 @@ for y in new:
         if y==T[z]:
             new[y].append(z)
 print(new)
+
