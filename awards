@@ -1,0 +1,23 @@
+shows=["South Pacific" , "The Producers", "Cabaret", "Death of a Salesman", "Hamilton", "La Cage Aux Folles",
+       "Billy Elliot", "Sweeney Todd", "Fiddler on the Roof", "Hello Dolly!",
+       "The Book of Mormon", "A Chorus Line", "Pippin", "Who’s Afraid of Virginia Woolf?","Hadestown"]
+awards=[17, 12, 12, 12, 11, 11, 10, 10, 10, 10, 9, 9, 9, 9, 8 ]
+
+T= {}
+i=0
+for x in shows:
+    for y in awards:
+        T[x]= awards[i]
+    i+=1
+print(T)
+
+
+new={}
+for x in T:
+    new[T[x]]= []
+
+for y in new:
+    for z in T:
+        if y==T[z]:
+            new[y].append(z)
+print(new)
