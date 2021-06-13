@@ -1,0 +1,32 @@
+import matplotlib.pyplot as plt
+
+years=[2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018]
+musicals=[78.94,80.5,88.77,88.3,94.85,102.45,106.5,104.11,105.68,113.1,125.7,122.73]
+plays=[62.68,65.98,72.79,75.1,79.54,82.54,92.99,104.46,89.59,85.48,89.17,116.12]
+specials=[0,73.86,0,116.79,129.69,117.05,64.34,105.43,97.16, 95.23,319.06,300.87]
+
+plt.plot(years, musicals, label="musicals")
+plt.plot(years, plays, label="plays")
+plt.plot(years, specials, label="specials")
+plt.title('Average Paid Admission')
+plt.xlabel('Year')
+plt.ylabel('Prices')
+plt.legend()
+plt.show()
+
+
+
+
+
+question= input( "Year(2007-1018):")
+
+question= int(question)
+pos= years.index(question)
+q= input("Type of admission(musical,play,special):")
+if q=="musical":
+    p= musicals[pos]
+if q== "play":
+    p=plays[pos]
+if q== "special":
+    p=specials[pos]
+print("In "+ str(question)+" the average of a "+ str(q) +" was $"+ str(p))
